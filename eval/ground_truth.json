@@ -1,0 +1,92 @@
+[
+  {
+    "category": "Category A: Literal Retrieval",
+    "question": "Under the Consumer Protection Act 2019, what is the pecuniary (monetary) jurisdiction of the District Commission?",
+    "source": "rule_cp_jurisdiction_2021_en.pdf",
+    "ground_truth_answer": "Up to 50 Lakhs (as per the 2021 amendment)."
+  },
+  {
+    "category": "Category A: Literal Retrieval",
+    "question": "What is the standard time limit for a Public Information Officer (PIO) to respond to a standard RTI application?",
+    "source": "act_rti_2005_en.pdf",
+    "ground_truth_answer": "30 days from the date of receipt of the application."
+  },
+  {
+    "category": "Category A: Literal Retrieval",
+    "question": "Does the Consumer Protection Act 2019 apply to e-commerce transactions?",
+    "source": "rule_cp_ecommerce_2020_en.pdf",
+    "ground_truth_answer": "Yes, the Act specifically includes \"any person who buys any goods or avails any services through electronic means.\""
+  },
+  {
+    "category": "Category A: Literal Retrieval",
+    "question": "What is the fee for filing an RTI application at the Central Government level?",
+    "source": "rule_rti_2012_en.pdf",
+    "ground_truth_answer": "Rs. 10/-."
+  },
+  {
+    "category": "Category A: Literal Retrieval",
+    "question": "Who is the current authority responsible for protecting and enforcing the rights of consumers as a class?",
+    "source": "act_cp_2019_en.pdf (Section 10)",
+    "ground_truth_answer": "The Central Consumer Protection Authority (CCPA)."
+  },
+  {
+    "category": "Category B: Analytical Reasoning",
+    "question": "If my RTI request is rejected, within how many days must I file the First Appeal?",
+    "source": "act_rti_2005_en.pdf",
+    "ground_truth_answer": "Within 30 days from the expiry of the period or from the receipt of the decision."
+  },
+  {
+    "category": "Category B: Analytical Reasoning",
+    "question": "What are the three requirements for a person to be considered a \"Consumer\" under the 2019 Act?",
+    "source": "act_cp_2019_en.pdf",
+    "ground_truth_answer": "1. Buys goods or avails services for consideration. 2. Includes offline and online transactions. 3. Does not include a person who obtains goods for resale or commercial purposes."
+  },
+  {
+    "category": "Category B: Analytical Reasoning",
+    "question": "Can a consumer dispute be referred to mediation? If so, at what stage?",
+    "source": "rule_cp_mediation_2020_en.pdf",
+    "ground_truth_answer": "Yes, the Commission can refer the matter for mediation with the consent of the parties at the first hearing or any time before the first hearing."
+  },
+  {
+    "category": "Category B: Analytical Reasoning",
+    "question": "What are the consequences for an e-commerce entity that fails to appoint a grievance officer?",
+    "source": "rule_cp_ecommerce_2020_en.pdf",
+    "ground_truth_answer": "It is considered a violation of the Consumer Protection (E-Commerce) Rules and attracts penalties under the Consumer Protection Act, 2019."
+  },
+  {
+    "category": "Category B: Analytical Reasoning",
+    "question": "What specific information is exempt from disclosure under Section 8 of the RTI Act?",
+    "source": "act_rti_2005_en.pdf",
+    "ground_truth_answer": "Information affecting national sovereignty, security, strategic interests, or trade secrets/intellectual property."
+  },
+  {
+    "category": "Category C: Procedural & Document Drafting",
+    "question": "What details must be included in a formal Consumer Complaint according to the proforma?",
+    "source": "tmp_cp_complaint_en.pdf",
+    "ground_truth_answer": "Name/Address of complainant, Name/Address of opposite party, Facts of the complaint, Documents (Invoices/Warranty), and the specific Relief sought."
+  },
+  {
+    "category": "Category C: Procedural & Document Drafting",
+    "question": "I live in a village in Andhra Pradesh. Can I ask the AI to explain my right to a refund in Telugu based on the 2019 Act?",
+    "source": "act_cp_2019_en.pdf (English) and act_rti_2005_te.pdf (Telugu Context)",
+    "ground_truth_answer": "The system must retrieve the English refund clause (Section 12) and translate the explanation accurately into Telugu."
+  },
+  {
+    "category": "Category C: Procedural & Document Drafting",
+    "question": "Does a person below the poverty line (BPL) have to pay the RTI application fee?",
+    "source": "rule_rti_2012_en.pdf",
+    "ground_truth_answer": "No, no fee shall be payable by persons who are below the poverty line."
+  },
+  {
+    "category": "Category C: Procedural & Document Drafting",
+    "question": "What is the difference between a \"Product Seller\" and a \"Product Manufacturer\" regarding liability?",
+    "source": "act_cp_2019_en.pdf (Chapter VI)",
+    "ground_truth_answer": "A manufacturer is liable for design/manufacturing defects. A seller is liable if they modified the product or failed to exercise reasonable care."
+  },
+  {
+    "category": "Category C: Procedural & Document Drafting",
+    "question": "(Drafting Challenge) Prepare a structure for an RTI Second Appeal.",
+    "source": "tmp_rti_appeal_2_en.pdf",
+    "ground_truth_answer": "Must include: Appellant details, PIO details, First Appellate Authority details, Date of First Appeal, and Grounds for Second Appeal."
+  }
+]

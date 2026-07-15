@@ -1,0 +1,18 @@
+# Environments
+venv/
+env/
+.env
+
+# Python Caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data & Vector DB (Heavy assets stay on compute server)
+data/raw/
+data/processed/
+data/vector_db/
+
+# System Files
+.DS_Store
+Thumbs.db
