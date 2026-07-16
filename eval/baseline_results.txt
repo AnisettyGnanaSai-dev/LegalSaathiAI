@@ -1,0 +1,80 @@
+🖥️  System Status: Running on cuda
+🤖 Initializing LLM: Llama-3.3-70b-versatile
+
+🚀 --- STARTING BASELINE EVALUATION ---
+
+❓ Query: What is the fee for filing a consumer case for a product worth 4 Lakhs?
+💡 AI Response: The fee for filing a consumer case for a product worth 4 Lakhs is 400. 
+
+Source: hb_cp_govt_handbook_en.pdf, Consumer Handbook page 15, Sl. No. (4) Above one lakh and upto five lakh rupees - 400.
+------------------------------------------------------------
+❓ Query: What is the pecuniary jurisdiction of the District Commission under the 2019 Act?
+💡 AI Response: The pecuniary jurisdiction of the District Commission under the 2019 Act is where the value of the goods or services paid as consideration does not exceed one crore rupees (Source: act_cp_2019_en.pdf, Section 34). However, as per the rules made in 2021, the jurisdiction of the District Commission has been revised to entertain complaints where the value of the goods or services paid as consideration does not exceed fifty lakh rupees (Source: rule_cp_jurisdiction_2021_en.pdf, Rule 3).
+------------------------------------------------------------
+❓ Query: Within how many days should a PIO respond to an RTI application?
+💡 AI Response: Within 30 days of the receipt of the request, a PIO should respond to an RTI application. However, if the information sought concerns the life or liberty of a person, the response should be provided within 48 hours of the receipt of the request.
+
+Source: act_rti_2005_en.pdf, Section 7, Sub-section (1)
+------------------------------------------------------------
+❓ Query: What is the response time for an RTI if it concerns the life or liberty of a person?
+💡 AI Response: The response time for an RTI if it concerns the life or liberty of a person is within forty-eight hours of the receipt of the request.
+
+Source: act_rti_2005_en.pdf
+------------------------------------------------------------
+❓ Query: Does a person below the poverty line (BPL) have to pay any fee for an RTI?
+💡 AI Response: According to the context provided, a person below the poverty line (BPL) is exempt from paying a fee for an RTI. This is stated in the Source: act_rti_2005_en.pdf, which mentions that "no such fee shall be charged from the persons who are of below poverty line as may be determined by the appropriate Government" (Source: act_rti_2005_en.pdf). 
+
+Therefore, the answer is: No, a person below the poverty line (BPL) does not have to pay any fee for an RTI.
+
+Source: act_rti_2005_en.pdf
+------------------------------------------------------------
+❓ Query: What are the requirements for an e-commerce entity regarding a grievance officer?
+💡 AI Response: According to the Source: rule_cp_ecommerce_en_hi.pdf, the requirements for an e-commerce entity regarding a grievance officer are:
+
+* The e-commerce entity shall appoint a grievance officer for consumer grievance redressal (Source: rule_cp_ecommerce_en_hi.pdf, section 4).
+* The grievance officer shall acknowledge the receipt of any consumer complaint within forty-eight hours (Source: rule_cp_ecommerce_en_hi.pdf, section 5).
+* The grievance officer shall redress the complaint within one month from the date of receipt of the complaint (Source: rule_cp_ecommerce_en_hi.pdf, section 5).
+* The name, contact details, and designation of the grievance officer shall be displayed on the e-commerce entity's platform (Source: rule_cp_ecommerce_en_hi.pdf, section 4).
+
+Source: rule_cp_ecommerce_en_hi.pdf
+------------------------------------------------------------
+❓ Query: Is an e-commerce entity required to provide a refund if a product is defective?
+💡 AI Response: Yes, an e-commerce entity is required to provide a refund if a product is defective. According to the rules, no inventory e-commerce entity shall refuse to take back goods, or withdraw or discontinue services purchased or agreed to be purchased, or refuse to refund consideration, if paid, if such goods or services are defective, deficient, spurious, or if the goods or services are not of the characteristics or features as advertised or as agreed to (Source: rule_cp_ecommerce_en_hi.pdf). 
+
+Similarly, for a marketplace e-commerce entity, the seller offering goods or services through it shall not refuse to take back goods, or withdraw or discontinue services purchased or agreed to be purchased, or refuse to refund consideration, if paid, if such goods or services are defective, deficient, or spurious (Source: rule_cp_ecommerce_en_hi.pdf).
+------------------------------------------------------------
+❓ Query: How is a 'consumer' defined under the Consumer Protection Act 2019?
+💡 AI Response: A 'consumer' is defined as a person who purchases a product or avails a service for a consideration, either for his personal use or to earn his livelihood by means of self-employment. The consideration may be paid, promised, or partly paid and partly promised. It also includes a beneficiary of such goods/services when such use is made with the approval of such person. (Source: hb_cp_govt_handbook_en.pdf)
+------------------------------------------------------------
+❓ Query: What are the six consumer rights defined in the 2019 Act?
+💡 AI Response: The six consumer rights defined in the 2019 Act are: 
+1. Right to Safety
+2. Right to be informed
+3. Right to choose 
+4. Right to be heard
+5. Right to seek redressal
+6. Right to consumer education 
+
+Source: hb_cp_govt_handbook_en.pdf
+------------------------------------------------------------
+❓ Query: Within how many days must a First Appeal be filed against an RTI decision?
+💡 AI Response: Within thirty days from the expiry of the period or from the receipt of the decision. 
+Source: act_rti_2005_en.pdf, Section 19(1)
+------------------------------------------------------------
+❓ Query: What is the time limit to file an appeal in the State Commission against a District Commission order?
+💡 AI Response: The time limit to file an appeal in the State Commission against a District Commission order is 30 days from the date of receipt of the order, as per the Source: hb_cp_govt_handbook_en.pdf. However, according to the Source: act_cp_2019_en.pdf, the time limit is 45 days from the date of the order. 
+
+Source: act_cp_2019_en.pdf, Section 41.
+------------------------------------------------------------
+❓ Query: Can a consumer dispute be referred to mediation? If so, at what stage?
+💡 AI Response: Yes, a consumer dispute can be referred to mediation. According to Section 79 of the act_cp_2019_en.pdf, "Where a consumer dispute is referred for mediation by the District Commission or the State Commission or the National Commission, as the case may be..." This implies that a consumer dispute can be referred to mediation at the stage when it is pending before the District Commission, State Commission, or National Commission. (Source: act_cp_2019_en.pdf)
+------------------------------------------------------------
+❓ Query: What is the role of the Central Consumer Protection Authority (CCPA)?
+💡 AI Response: The role of the Central Consumer Protection Authority (CCPA) is to regulate matters relating to violation of rights of consumers, unfair trade practices, and false or misleading advertisements which are prejudicial to the interests of the public and consumers, and to promote, protect, and enforce the rights of consumers as a class. (Source: act_cp_2019_en.pdf, Chapter III)
+------------------------------------------------------------
+❓ Query: What is the penalty for manufacturers for a misleading advertisement?
+💡 AI Response: The penalty for manufacturers for a misleading advertisement may extend to ten lakh rupees for the first contravention. However, for every subsequent contravention, the penalty may extend to fifty lakh rupees. (Source: act_cp_2019_en.pdf, Content: 21)
+------------------------------------------------------------
+❓ Query: What is the definition of 'product liability' under the new Act?
+💡 AI Response: The definition of 'product liability' under the new Act is "the responsibility of a product manufacturer or product seller, of any product or service, to compensate for any harm caused to a consumer by such defective product manufactured or sold or by deficiency in services relating thereto" (Source: act_cp_2019_en.pdf, clause 34).
+------------------------------------------------------------
