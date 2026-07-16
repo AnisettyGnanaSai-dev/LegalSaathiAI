@@ -1,0 +1,95 @@
+LEGAL SATHI AI - BASELINE 1 REPORT
+Generated: 2026-07-16 06:40:19.204510
+
+Q1: Agar mera product 4 Lakh ka hai to consumer court ki fee kitni bharni padegi?
+A: According to the information provided in the document "act_cp_2019_hi.pdf", if a complaint involves an amount up to 5 Lakhs, no fee is required. The document states:
+
+"अिुपम जमश्रा, संयुक्त सजचर् 
+ 
+MINISTRY OF CONSUMER AFFAIRS, FOOD AND PUBLIC DISTRIBUTION  
+(Department of Consumer Affairs) 
+NOTIFICATION
+New Delhi, the 30th December, 2021
+
+G.S.R. 912(E).—In exercise of the powers conferred by provisos to sub -section (1) of section 34, sub -clause (i) of clause (a) of sub -section (1) of section 47 and sub -clause (i) of clause (a) of sub -section (1) of section 58 read with sub-clauses (o), (x) and (zc) of sub-section (2) of section 101 of the Consumer Protection Act, 2019 (35 of 2019), the Central Government hereby makes the following rules, namely:--
+
+2. Fee for Complaints.—(i) Every complaint filed shall be accompanied by a fee as specified in the table given below in the form of crossed Demand Draft drawn on a nationalized bank or through a crossed payment of fee for complaints upto rupees one lakh on production of an attested copy of the Antyodaya Anna Yojana card.
+
+So, if your product is worth 4 Lakhs, no fee would be required.
+Time: 4.93s
+------------------------------
+Q2: RTI apply karne ke baad PIO ko kitne din mein response dena hota hai?
+A: Not in the documents.
+Time: 0.59s
+------------------------------
+Q3: Kya misleading ads ke liye company par fine lag sakta hai? Kitna?
+A: Kya misleading ads ke liye company par fine lag sakta hai, jo false or misleading advertisement ki cause ho, uska punishment 2 years ka imprisonment hoga aur 20 lakh rupees ka fine bhi lag sakta hai. Is situation mein, section 89 of act_cp_2019_en.pdf se aaya jati hai.
+Time: 1.49s
+------------------------------
+Q4: Defective product ke liye e-commerce company refund dene se mana kar sakti hai kya?
+A: E-commerce companies can offer refunds for defective products, but it depends on the specific circumstances. According to the rules provided in the document (rule_cp_ecommerce_en_hi.pdf), if a product is found to be defective, deficient, or spurious, or if it does not meet the advertised characteristics or features as agreed upon, and this happens within the stated delivery schedule, then the e-commerce company can apply for an exception due to force majeure. In such cases, they are allowed to not apply this sub-rule.
+
+However, based on the information given in the document, if a product is found defective, deficient or spurious, or does not meet advertised characteristics and features, and it's within the delivery schedule, then the e-commerce company can offer refunds as per the rules. 
+
+So yes, they can offer refunds for defective products under these conditions.
+Time: 3.11s
+------------------------------
+Q5: BPL category walo ko RTI ki application fee deni padti hai ya free hai?
+A: The document provided does not contain any information regarding the RTI (Right to Information) application fees for the BPL (Below Poverty Line) category. The content is related to reservation and quota details for various categories of government jobs, but does not specify anything about RTI application fees. Therefore, based on the given information, it's not possible to determine whether BPL category applicants have to pay or if they are exempt from paying RTI application fees.
+Time: 1.69s
+------------------------------
+Q6: Naa product cost 4 Lakhs, nenu case file chesthe entha fee pay cheyali?
+A: Nenu case file chesi entha fee paychena, 200 rupees chaayala. Yanne Antyodaya Anna Yojana card kaamakshya katha attested copy katha dekhiya fee nila payche.
+Time: 1.22s
+------------------------------
+Q7: RTI file chesthe PIO reply ivvadaniki maximum time limit entha?
+A: According to the document, if a request for information (RTI application) is made and the PIO's decision does not comply with any of the grounds mentioned in sections 8 or 9, then the appeal will be entertained within 14 days from the date of the order. 
+
+However, if the RTI request pertains to information that is subject to a specific right or freedom (like privacy or personal data), and the PIO's decision does not comply with such rights or freedoms, then the appeal can be entertained beyond 14 days.
+
+So, in summary, the maximum time limit for entertaining an appeal under these conditions would be 14 days. If it pertains to a specific right or freedom, then the appeal can be entertained beyond this period.
+Time: 2.54s
+------------------------------
+Q8: Online shopping lo defective item vachindi, refund apply cheyacha?
+A: In the document "rule_cp_ecommerce_en_hi.pdf", it states that if goods are defective, deficient, spurious, not as advertised, or delivered late (with force majeure exceptions), then there are certain reliefs available to consumers. One of these reliefs is a refund of the price paid for the defective item.
+
+So yes, if you receive an online shopping order for a defective item, you can apply for a refund according to the rules provided in this document.
+Time: 2.07s
+------------------------------
+Q9: Consumer Rights ante enti? 2019 Act lo em unnayi?
+A: Consumer Rights under the Consumer Protection Act, 2019 are as follows:
+
+- Right to Safety
+- Right to be Informed
+- Right to Choose
+- Right to be Heard
+
+These rights were advocated by John F. Kennedy and are part of the Consumer Protection Act, 2019 which was enacted on August 9, 2019. The Act aims to protect consumers' interests and establish authorities for timely and effective administration and settlement of consumer disputes.
+Time: 1.77s
+------------------------------
+Q10: District Commission order meedha State Commission ki appeal eppudu cheyali?
+A: District Commission ka order ko State Commission ke appeal se koi specific provision nahi hai. Source mein State Commission ke order ko Supreme Court mein appeal karne ka provision hain, lekin District Commission ka order ko specific State Commission ke or State Commission ke or National Commission ke paas direct appeal options nahi hain.
+
+Source: act_cp_2019_en.pdf
+Content: 41. Appeal against order of District Commission.—Any person aggrieved by an order made by the 
+District Commission may prefer an appeal against such order to the State Commission on the grounds of 
+facts or law within a period of forty-five days from the date of the order, in such form and manner, as may 
+be prescribed:
+
+Source: act_cp_2019_en.pdf
+Content: 42. Establishment of State Consumer Disputes Redressal Commission .—(1) The State 
+Government shall, by notification, establish a State Consumer Disputes Redressal Commission, to be
+
+These sources mention that aggrieved parties can appeal orders made by District Commissions to the State Commission within 45 days. However, there is no specific provision for appealing orders of District Commissions directly to State Commission or any other body without going through State Commission as mentioned in your question.
+Time: 4.02s
+------------------------------
+Q11: उपभोक्ता संरक्षण अधिनियम 2019 के तहत 'उत्पाद दायित्व' (Product Liability) क्या है?
+A: उपभोक्ता संरक्षण अधिनियम 2019 के तहत 'उत्पाद दायित्व' (Product Liability) में, उत्पाद विक्रेता या उत्पाद सेवा प्रदाता के लिए अपनी गलated उत्पादों और सेवाओं के बारे में जो हमेशा उपभोक्ता को खराब नहीं है या अनुचित नहीं है, उसे दायित्विक रूप से मालिकाना आता है।
+
+उदाहरण के लिए, यदि एक उत्पाद विक्रेता अपनी गलated टेस्टमेंट को बनाने में असफल है और इसके कारण उपभोक्ता खतरे से पड़ जाता है, तो उत्पाद विक्रेता उपभोक्ता को अनुचित या गलated उत्पाद से पड़े खराबी के लिए रोज़ियस मिलेंगे।
+
+इसके अलावा, यदि उत्पाद विक्रेता नहीं गलated टेस्टमेंट को बनाता है और इसके कारण उपभोक्ता खतरे से पड़ जाता है, तो वह भी दायित्विक रूप से मालिकाना आता है।
+
+इसलिए, 'उत्पाद दायित्व' का मुख्य अर्थ उत्पाद विक्रेता और सेवा प्रदाता ने गलated उत्पादों और सेवाओं की जांच की या बनाई है, लेकिन उपभोक्ता को खराब नहीं हुई उत्पाद से पड़े अनुचित या गलated विषयों के लिए रोज़ियस मिलेंगा।
+Time: 10.70s
+------------------------------

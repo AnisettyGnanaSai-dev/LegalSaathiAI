@@ -1,123 +1,123 @@
 import os
 import torch
-from dotenv import load_dotenv
-from langchain_groq import ChatGroq
+import requests
+import time
+from operator import itemgetter
 from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_ollama import ChatOllama
 from langchain_qdrant import QdrantVectorStore
 from qdrant_client import QdrantClient
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
-from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_core.chat_history import InMemoryChatMessageHistory
+from langchain_core.runnables.history import RunnableWithMessageHistory
 
-# 1. Initialization
-load_dotenv()
-
-# Constants
-VECTOR_DB_PATH = "data/vector_db"
+# MNC Constants
+VECTOR_DB_PATH = os.path.join(os.getcwd(), "data", "vector_db")
 COLLECTION_NAME = "legalsathi_baseline"
+OLLAMA_URL = "http://127.0.0.1:11434"
 
-def run_baseline_eval():
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-    print(f"🖥️  System Status: Running on {device}")
+store = {}
 
-    # 2. Embedding Layer
-    embeddings_model = HuggingFaceEmbeddings(
+def get_session_history(session_id: str):
+    if session_id not in store:
+        store[session_id] = InMemoryChatMessageHistory()
+    return store[session_id]
+
+def get_rag_chain():
+    # Force CPU and clean cache
+    embeddings = HuggingFaceEmbeddings(
         model_name="BAAI/bge-m3",
-        model_kwargs={'device': device}
-    )
-
-    # 3. Connection Layer
-    client = QdrantClient(path=VECTOR_DB_PATH)
-    if not client.collection_exists(COLLECTION_NAME):
-        print(f"❌ Error: Collection '{COLLECTION_NAME}' not found.")
-        return
-
-    vectorstore = QdrantVectorStore(
-        client=client,
-        collection_name=COLLECTION_NAME,
-        embedding=embeddings_model,
+        model_kwargs={'device': 'cpu'}
     )
     
+    # Use prefer_grpc=False for higher stability in low-ram environments
+    client = QdrantClient(path=VECTOR_DB_PATH, prefer_grpc=False)
+    vectorstore = QdrantVectorStore(
+        client=client, 
+        collection_name=COLLECTION_NAME, 
+        embedding=embeddings
+    )
+    
+    # MNC FIX: Reduce K to 3. This saves 50% of RAM during inference
     retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
 
-    # 4. LLM Layer (Updated Model String)
-    print("🤖 Initializing LLM: Llama-3.3-70b-versatile")
-    
-    # We pass the key explicitly to avoid environment-read red lines
-    llm = ChatGroq(
-        model_name="llama-3.3-70b-versatile", 
-        temperature=0, 
-        groq_api_key=os.getenv("GROQ_API_KEY")
+    llm = ChatOllama(
+        model="qwen2.5:3b-instruct", 
+        temperature=0.1, 
+        streaming=True, 
+        base_url=OLLAMA_URL,
+        num_ctx=2048 # Limit context window to prevent Segfault
     )
 
-    # 5. Prompt Layer
-    template = """You are LegalSathi AI, an expert Indian Legal Assistant. 
-    Use ONLY the context below to answer the user's question. 
-    If you don't know the answer, state that it is not in the knowledge base.
-    
-    CRITICAL: You must cite the 'Source' file for your answer.
+    system_instr = (
+        "You are LegalSathi AI. 1. Explain law in user's language. 2. Ask for details. 3. Draft letter. "
+        "Cite Source and Section. ALWAYS ask if the user wants to draft a letter."
+    )
 
-    Context: {context}
-    Question: {question}
-    
-    Answer:"""
-    
-    prompt = ChatPromptTemplate.from_template(template)
+    prompt = ChatPromptTemplate.from_messages([
+        ("system", system_instr),
+        MessagesPlaceholder(variable_name="history"),
+        ("human", "Context: {context}\n\nQuestion: {question}")
+    ])
 
-    # 6. Chain Construction
     def format_docs(docs):
-        return "\n\n".join([f"Source: {d.metadata.get('source', 'Unknown')}\nContent: {d.page_content}" for d in docs])
+        return "\n\n".join([f"Source: {d.metadata.get('source')}\nContent: {d.page_content}" for d in docs])
 
-    rag_chain = (
-        {"context": retriever | format_docs, "question": RunnablePassthrough()}
+    chain = (
+        {
+            "context": itemgetter("question") | retriever | format_docs,
+            "question": itemgetter("question"),
+            "history": itemgetter("history")
+        }
         | prompt
         | llm
         | StrOutputParser()
     )
 
-    # 7. Execution Logic
-    test_queries = [
-        # Pecuniary/Fees
-        "What is the fee for filing a consumer case for a product worth 4 Lakhs?",
-        "What is the pecuniary jurisdiction of the District Commission under the 2019 Act?",
-        
-        # RTI Timelines & Fees
-        "Within how many days should a PIO respond to an RTI application?",
-        "What is the response time for an RTI if it concerns the life or liberty of a person?",
-        "Does a person below the poverty line (BPL) have to pay any fee for an RTI?",
-        
-        # E-commerce & Grievance
-        "What are the requirements for an e-commerce entity regarding a grievance officer?",
-        "Is an e-commerce entity required to provide a refund if a product is defective?",
-        
-        # Rights & Definitions
-        "How is a 'consumer' defined under the Consumer Protection Act 2019?",
-        "What are the six consumer rights defined in the 2019 Act?",
-        
-        # Appeals & Procedures
-        "Within how many days must a First Appeal be filed against an RTI decision?",
-        "What is the time limit to file an appeal in the State Commission against a District Commission order?",
-        "Can a consumer dispute be referred to mediation? If so, at what stage?",
-        
-        # CCPA & Penalties
-        "What is the role of the Central Consumer Protection Authority (CCPA)?",
-        "What is the penalty for manufacturers for a misleading advertisement?",
-        "What is the definition of 'product liability' under the new Act?"
-    ]
+    return RunnableWithMessageHistory(chain, get_session_history, input_messages_key="question", history_messages_key="history")
 
-    print("\n🚀 --- STARTING BASELINE EVALUATION ---\n")
-    for query in test_queries:
-        print(f"❓ Query: {query}")
+def main():
+    print("⚖️ LegalSathi AI: Initializing Optimized CPU Engine...")
+    try:
+        requests.get(OLLAMA_URL, timeout=5)
+        chain = get_rag_chain()
+    except:
+        print("❌ Error: Restart the server using Step 1.")
+        return
+
+    sid = "prod_session_01"
+    print("✅ System Ready (Memory Optimized).")
+
+    while True:
+        u_input = input("\n👤 User: ")
+        if u_input.lower() in ['exit', 'quit']: break
+        
+        print("\n🔍 Analysing context...")
+        print("🤖 AI: ", end="", flush=True)
+        
+        full_reply = ""
         try:
-            # We use .invoke() for single-turn logic
-            response = rag_chain.invoke(query)
-            print(f"💡 AI Response: {response}")
+            for chunk in chain.stream({"question": u_input}, config={"configurable": {"session_id": sid}}):
+                print(chunk, end="", flush=True)
+                full_reply += chunk
         except Exception as e:
-            print(f"❌ Execution Error: {str(e)}")
-        print("-" * 60)
+            print(f"\n❌ [Inference Error]: {e}")
+            continue
+
+        if "draft" in full_reply.lower() or "letter" in full_reply.lower():
+            decision = input("\n👉 Draft a letter? (yes/no): ")
+            if decision.lower() == 'yes':
+                lang = input("🌐 Language (English/Telugu/Hindi): ")
+                details = input("📝 Provide details (Name, Order ID): ")
+                
+                print(f"\n📄 Generating {lang} draft...\n")
+                draft_prompt = f"Draft a formal legal complaint in {lang} script. User details: {details}. Use professional format."
+                
+                for chunk in chain.stream({"question": draft_prompt}, config={"configurable": {"session_id": sid}}):
+                    print(chunk, end="", flush=True)
+                print("\n" + "="*50)
 
 if __name__ == "__main__":
-    if not os.getenv("GROQ_API_KEY"):
-        print("❌ Error: GROQ_API_KEY not found. Check your .env file.")
-    else:
-        run_baseline_eval()
+    main()
